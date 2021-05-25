@@ -1,0 +1,18 @@
+{% extends "events/base.html" %}
+{% block content %}
+    {%for p in programes%}
+    <centre>
+    <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ p.head}}</a>
+            </div>
+            <h2><a class="article-title" href="{% url 'event-detail' p.id %}">{{ p.program }}</a></h2>
+            <p class="article-content">{{ p.about }}</p>
+            <h4><small class="text-muted">Place:{{ p.venue}}</small></h4>
+            <h4><small class="text-muted">Date and Time:{{ p.time}}</small></h4>
+          </div>
+        </article>
+      </centre>
+    {%endfor%}
+{%endblock content%}
